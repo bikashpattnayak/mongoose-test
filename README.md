@@ -1,6 +1,5 @@
 # mongoose-test
 
-API HOSTED 
 REGISTER/LOGIN:
 https://mongoose-test-bikash.herokuapp.com/user/register
 payload: {
