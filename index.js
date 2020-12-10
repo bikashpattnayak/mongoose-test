@@ -19,6 +19,6 @@ app.use((error, req, res, next) => {
   console.log("some error occured, bikash", error);
   process.exit(1);
 });
-app.listen(process.env.EXPRESS_PORT, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("server started");
 });
