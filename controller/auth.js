@@ -20,6 +20,9 @@ class AuthController {
       .loginSchema()
       .validateAsync({ email, password });
     const foundUser = await User.findOne({ email: email });
+    if (!foundUser) {
+      next(new Error("User doesn't exists"));
+    }
     const result = await bcrypt.compare(password, foundUser.password);
 
     if (result) {
