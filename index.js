@@ -15,6 +15,12 @@ app.use("/user", userRouter);
 app.use("/books", authMiddleware, bookRouter);
 app.use("/posts", authMiddleware, postRouter);
 app.use("/", homeRouter);
+app.use((req, res, next) => {
+  res.status(400).send({
+    error: 1,
+    message: `check the url ${req.url} with method ${req.method}`,
+  });
+});
 
 app.use((error, req, res, next) => {
   console.log("some error occured, bikash", error.message);
