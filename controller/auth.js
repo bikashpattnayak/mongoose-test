@@ -14,7 +14,7 @@ class AuthControllerPayLoadSchema {
 }
 
 class AuthController {
-  login = async (req, res, next) => {
+  login = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
     const val = await new AuthControllerPayLoadSchema()
       .loginSchema()
@@ -31,7 +31,7 @@ class AuthController {
     } else {
       next(new Error("some issue"));
     }
-  };
+  });
 
   register = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
