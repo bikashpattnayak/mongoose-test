@@ -13,7 +13,7 @@ require("./db");
 
 app.use("/user", userRouter);
 app.use("/books", authMiddleware, bookRouter);
-app.use("/post", authMiddleware, postRouter);
+app.use("/posts", authMiddleware, postRouter);
 app.use("/", homeRouter);
 
 app.use((error, req, res, next) => {

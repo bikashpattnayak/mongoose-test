@@ -32,7 +32,7 @@ class AuthController {
 
       res.status(200).send({ auth: token });
     } else {
-      next(new Error("some issue"));
+      next(new Error("please check the credentials"));
     }
   });
 
